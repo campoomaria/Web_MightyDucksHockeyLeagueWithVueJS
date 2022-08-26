@@ -1,0 +1,249 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ body {
+  font-family: Helvetica, Verdana, Arial, sans-serif; 
+}
+
+
+.nav_index{
+  background-color: #38618C;
+  position: absolute;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  max-height: 36px;
+  height: 36px;
+}
+.nav_index  a{
+  list-style-type: none;
+  color: white;
+
+}
+
+.svg{
+  width: 24px;
+  height: 24px;
+} 
+
+a:link {
+  text-decoration: none;
+}
+
+.header_index{
+  width: auto;
+  height: auto;
+  position: absolute;
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  right: 0;
+}
+.header_index .title_index{
+  background-color: #38618C;
+  padding: 25px;
+  width: auto;
+  height: 5vh;
+  color: white;
+  align-content: center;
+}
+
+.header_index svg{
+  width: auto;
+  /* height: 100px; */
+}
+.header_index button{
+  background-color: #38618C;
+  color: white;
+  border: none;
+}
+
+.title_index h1, #pageheader h1{
+  font-size: 20px;
+}
+
+
+#container_card_index{
+margin-top: 120px;
+}
+
+ .card_1{
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: white;
+}
+
+
+.card_1 .card-img-top{
+  height: auto;
+
+  top: 24px;  
+  border-radius: 15px; 
+} 
+
+
+ #pageheader{
+  text-align: center;
+}
+/*
+#bodycontent{
+  position: relative;
+  left: 25%;
+  background: white;
+  border-style: dashed;
+  border-color: black;
+  border-width: 3px;
+  padding: 1em; 
+  width: 70%;
+  text-align: justify;
+  z-index: 2;
+}
+
+#bodycontent h1{
+  font-size: 1.5em;
+}
+
+#bodycontent h2{
+  font-size: 1.1em;
+  text-transform:uppercase;
+}
+
+#bodyconent h2{
+    padding: 0px;
+    margin: 0px;
+}
+
+#bodycontent ul{
+  list-style-type: square;
+}
+
+#infotable th{
+  text-decoration: underline;
+  padding: 0 1.0em;
+  padding-top: 1em; 
+}
+
+#infotable td{
+  text-align: left;
+  padding: 0 1.0em;
+}
+
+#bodycontent address{
+  font-style: normal;
+}
+
+#titlecenter{
+  text-align: center;
+}
+
+#upcoming h2{
+  font-size: 1.0em;
+  font-weight:normal;
+  font-style: italic; 
+  text-transform:none;
+}
+
+iframe{
+  border: 0;
+  overflow: hidden;
+  margin: 0;
+}
+
+#infotable h3, #rules h3{
+  display: inline-block;
+  margin-top: 1em;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+#gamelocations td{
+  padding: 2em;
+}
+
+legend{
+  font-weight: bold;
+}
+
+fieldset{
+  margin: 2em 0;
+}
+
+fieldset label{
+  padding-left: 2em;
+}
+
+.impinfo{
+  font-weight: bold;
+  font-size:  .95em;
+  padding: 0em;
+}
+
+.note{
+  font-weight: normal;
+  font-size: 1.0em;
+}
+
+.indent{
+  margin-top: -1em;
+  margin-left: 1em;
+}
+
+.uniformchoice, .contract{
+  font-size: .8em;
+}
+
+.announcement{
+font-style: italic; 
+text-decoration: underline;
+}
+
+#first_name, #last_name, #street_address, #city, #zip, #birth_date, #parent_guardian, #contact_phone, #contact_email, #signature, #sig_date{
+  display: block;
+  margin-bottom: .5em;
+}
+#street_address{
+  width: 20em;
+}
+#city{
+  width: 15em;
+}
+#zip{
+  width: 4em;
+}
+#birth_date{
+  width: 6em;
+}
+#contact_phone{
+  width: 7em;
+} 
+#contact_email{
+  width: 15em;
+}
+#sig_date{
+  width: 5em;
+}
+
+fieldset{
+  border:solid 1px green;
+}
+
+form h3{
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.stylized label{
+  width:12em;
+  padding-right: 1em;
+  text-align: right;
+  float: left;  
+}
+
+input{
+  padding:4px 2px;
+  border:solid 1px green;
+} */
