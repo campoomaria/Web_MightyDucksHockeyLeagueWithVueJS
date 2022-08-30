@@ -7,7 +7,6 @@
   font-family: Helvetica, Verdana, Arial, sans-serif; 
 }
 
-
 .nav_index{
   background-color: #38618C;
   position: absolute;
@@ -134,166 +133,58 @@ margin-top: 160px;
 }
 
 .acordions_rules{
-  margin-top: 26px;
   margin-bottom: 30px;
 }
 
-/*
-#bodycontent{
-  position: relative;
-  left: 25%;
-  background: white;
-  border-style: dashed;
-  border-color: black;
-  border-width: 3px;
-  padding: 1em; 
-  width: 70%;
-  text-align: justify;
-  z-index: 2;
+.titlecenter{
+  margin-top: 80px;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
 
-#bodycontent h1{
-  font-size: 1.5em;
+.bodycontent_register{
+  background-color: #6BBF59;
+  margin-top: 80px;
+  color: white;
+  font-weight: 700;
 }
 
-#bodycontent h2{
-  font-size: 1.1em;
-  text-transform:uppercase;
+fieldset{
+  margin: 0.2em 1em;
+  border:solid 1px white;
 }
 
-#bodyconent h2{
-    padding: 0px;
-    margin: 0px;
-}
-
-#bodycontent ul{
-  list-style-type: square;
-}
-
-#infotable th{
-  text-decoration: underline;
-  padding: 0 1.0em;
-  padding-top: 1em; 
-}
-
-#infotable td{
-  text-align: left;
-  padding: 0 1.0em;
-}
-
-#bodycontent address{
-  font-style: normal;
-}
-
-#titlecenter{
+.stylized input{
+  margin: 0.2em 1em;
+  border-top: 1px solid white;
   text-align: center;
 }
 
-#upcoming h2{
-  font-size: 1.0em;
-  font-weight:normal;
-  font-style: italic; 
-  text-transform:none;
-}
-
-iframe{
-  border: 0;
-  overflow: hidden;
-  margin: 0;
-}
-
-#infotable h3, #rules h3{
-  display: inline-block;
-  margin-top: 1em;
-  margin-bottom: 0;
-  font-size: 1em;
-}
-
-#gamelocations td{
-  padding: 2em;
-}
-
-legend{
-  font-weight: bold;
-}
-
-fieldset{
-  margin: 2em 0;
-}
-
-fieldset label{
-  padding-left: 2em;
-}
-
-.impinfo{
-  font-weight: bold;
-  font-size:  .95em;
-  padding: 0em;
-}
-
-.note{
-  font-weight: normal;
-  font-size: 1.0em;
-}
-
-.indent{
-  margin-top: -1em;
-  margin-left: 1em;
-}
-
-.uniformchoice, .contract{
-  font-size: .8em;
-}
-
-.announcement{
-font-style: italic; 
-text-decoration: underline;
-}
-
-#first_name, #last_name, #street_address, #city, #zip, #birth_date, #parent_guardian, #contact_phone, #contact_email, #signature, #sig_date{
-  display: block;
-  margin-bottom: .5em;
-}
-#street_address{
-  width: 20em;
-}
-#city{
-  width: 15em;
-}
-#zip{
-  width: 4em;
-}
-#birth_date{
-  width: 6em;
-}
-#contact_phone{
-  width: 7em;
-} 
-#contact_email{
-  width: 15em;
-}
-#sig_date{
-  width: 5em;
-}
-
-fieldset{
-  border:solid 1px green;
-}
-
-form h3{
-  font-size: 1em;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
 .stylized label{
-  width:12em;
-  padding-right: 1em;
-  text-align: right;
-  float: left;  
+  font-size: large;
 }
 
-input{
-  padding:4px 2px;
-  border:solid 1px green;
-} */  
+.contract_register{
+  margin: 0.2em 0.1em;
+}
+
+.button_register{
+margin-bottom: 50px;
+color: rgb(255, 255, 255); 
+font-size: 16px; 
+line-height: 16px; 
+padding: 6px; 
+border-radius: 10px; 
+font-family: Georgia, serif; 
+font-weight: 700; 
+box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
+background-color: #38618C;
+border: 2px solid rgb(28, 110, 164); 
+width: 200px;
+}
+
+.btn-group-vertical{
+  margin-top: 140px;
+  text-align: center;
+}
