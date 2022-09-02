@@ -28,30 +28,26 @@
   </header>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+    
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div id="container_card_index" class="d-flex flex-row justify-content-center">
-          <div class="card_1 text-center" style="width: 70vw; height: 360px;" >
-            <img src="./css/img/hockey_1.jpg" class="card-img-top w-75 h-auto mt-3 mb-5" alt="imagen1">
+          <div class="card_1 text-center" style="width: 70vw; height: auto;" >
+            <img src="./asset/img/hockey_1.jpg" class="card-img-top  h-auto  mb-3" alt="imagen1">
             <div class="card-body">
               <h3 class="card-title">August 4</h3>
-              <p class="card-text mt-2">MDHL Fundraiser</p>
+              <p class="card-text mt-2 mb-2">MDHL Fundraiser</p>
             </div>
           </div>
         </div>
       </div>
       <div class="carousel-item">
         <div id="container_card_index" class="d-flex flex-row justify-content-center">
-          <div class="card_1 text-center" style="width: 70vw; height: 360px;" >
-            <img src="./css/img/hockey_4.jpg" class="card-img-top w-75 h-auto mt-3 mb-5" alt="imagen1">
+          <div class="card_1 text-center" style="width: 70vw; height: auto;" >
+            <img src="./asset/img/hockey_3.jpg" class="card-img-top  h-auto  mb-3" alt="imagen1">
             <div class="card-body">
               <h3 class="card-title">August 16</h3>
-              <p class="card-text mt-2">Season Kick-off: Meet the Teams</p>
+              <p class="card-text mt-2 mb-2">Season Kick-off: Meet the Teams</p>
             </div>
           </div>
         </div>
@@ -59,17 +55,17 @@
       <div class="carousel-item">
         <div id="container_card_index" class="d-flex flex-row justify-content-center">
           
-          <div class="card_1 text-center" style="width: 70vw; height: 360px;" >
-            <img src="./css/img/hockey_4.jpg" class="card-img-top w-75 h-auto mt-3 mb-5" alt="imagen1">
+          <div class="card_1 text-center" style="width: 70vw; height: auto;" >
+            <img src="./asset/img/hockey_2.jpg" class="card-img-top h-auto mb-3" alt="imagen1">
             <div class="card-body">
               <h5 class="card-title">September 1</h5>
-              <p class="card-text mt-2">First Game of the Season (Check Game Schedule for details)</p>
+              <p class="card-text mt-2 mb-2">First Game of the Season (Check Game Schedule for details)</p>
             </div>
           </div>    
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
@@ -104,6 +100,26 @@
         </svg>
         </a>
   </div> 
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBGNYYZZC7uCZyyr81KATh3G-SWyFJAko",
+      authDomain: "mdhl-iniciatec-faf38.firebaseapp.com",
+      projectId: "mdhl-iniciatec-faf38",
+      storageBucket: "mdhl-iniciatec-faf38.appspot.com",
+      messagingSenderId: "143254170692",
+      appId: "1:143254170692:web:b25fce95eeb312eb076011"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
   <script src="https://unpkg.com/vue@3"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

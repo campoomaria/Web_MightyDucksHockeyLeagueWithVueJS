@@ -13,8 +13,8 @@
   position: fixed;
   bottom: 0;
   width: 100vw;
-  max-height: 36px;
-  height: 36px;
+  max-height: 50px;
+  height: 60px;
 }
 .nav_index  a{
   list-style-type: none;
@@ -34,7 +34,6 @@ a:link {
 .header_index{
   width: auto;
   height: auto;
-  position: absolute;
   position: fixed;
   left: 0;
   top:0;
@@ -43,16 +42,16 @@ a:link {
 }
 .header_index .title_index{
   background-color: #38618C;
-  padding: 25px;
+  padding: 20px;
+  font-weight: 700;
   width: auto;
-  height: 5vh;
+  height: 50px;
   color: white;
-  align-content: center;
+  align-items: center;
 }
 
 .header_index svg{
   width: auto;
-  /* height: 100px; */
 }
 .header_index button{
   background-color: #38618C;
@@ -61,12 +60,17 @@ a:link {
 }
 
 .title_index h1, #pageheader h1{
-  font-size: 20px;
+  font-size: 18px;
+  align-items: center;
 }
 
 
 #container_card_index{
 margin-top: 160px;
+}
+
+.carousel-control-next, .carousel-control-prev{
+  margin-top: 160px;
 }
 
  .card_1{
@@ -78,8 +82,8 @@ margin-top: 160px;
 
 .card_1 .card-img-top{
   height: auto;
-  top: 24px;  
-  border-radius: 15px; 
+
+  border-radius: 15px 15px 0 0; 
 } 
 
 
@@ -133,7 +137,7 @@ margin-top: 160px;
 }
 
 .acordions_rules{
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .titlecenter{
@@ -170,7 +174,7 @@ fieldset{
 }
 
 .button_register{
-margin-bottom: 50px;
+margin-bottom: 60px;
 color: rgb(255, 255, 255); 
 font-size: 16px; 
 line-height: 16px; 
@@ -185,6 +189,26 @@ width: 200px;
 }
 
 .btn-group-vertical{
-  margin-top: 140px;
+  text-align: center;
+  align-items: center;
+  padding: 15px;
+
+}
+
+.accordion-button::after {
+width: 0;
+height: 0;
+
+}
+
+.titulo_location{
+  margin-top: 105px;
+  text-align: center;
+}
+
+.container_game_add{
+  margin-top: 5px;
+  margin-bottom: 80px;
+  align-items: center;
   text-align: center;
 }
