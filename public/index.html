@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home MDHL</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link href="css/mdhl_3.css" rel="stylesheet" type="text/css" />
 </head>
-	
-<body class="body_index" style="background-color: #6BBF59;">
+
+<body id="app" class="body_index">
 
   <header class="header_index">
     <div class="title_index d-flex flex-row justify-content-between align-items-center">
       <h1>Mighty Ducks Hockey League</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z" />
-          </svg>        
-        </button>
-      </div>
-      <div id="pageheader" style="background-color: #D9D9D9; ">
-        <h1>Upcoming Events</h1>
-      </div>  
-    </header>
-    
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" >
+    <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header text-center"style="color: black;">
+        <div class="modal-header text-center" style="color: black;">
           <h5 class="modal-title" id="exampleModalLabel">LOG IN</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -45,88 +45,749 @@
       </div>
     </div>
   </div>
+  <section v-if="page =='home'">
+    <div id="pageheader" style="background-color: #D9D9D9; ">
+      <h1>Upcoming Events</h1>
+    </div>
 
-  <div id="carouselExampleIndicators" class="carousel mt-5 slide" data-bs-ride="true">
-    
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div id="container_card_index" class="d-flex flex-row justify-content-center">
-          <div class="card_1 text-center" style="width: 70vw; height: auto;" >
-            <img src="./asset/img/hockey_1.jpg" class="card-img-top  h-auto  mb-3" alt="imagen1">
-            <div class="card-body">
-              <h3 class="card-title">August 4</h3>
-              <p class="card-text mt-2 mb-2">MDHL Fundraiser</p>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div id="container_card_index" class="d-flex flex-row justify-content-center flex-md-column">
+            <div class="card_1 text-center " style="width: 70vw; height: auto;">
+              <img src="./asset/img/hockey_1.jpg" class="card-img-top  h-auto  mb-3" alt="imagen1">
+              <div class="card-body">
+                <h3 class="card-title">August 4</h3>
+                <p class="card-text mt-2 mb-2">MDHL Fundraiser</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div id="container_card_index" class="d-flex flex-row justify-content-center">
+            <div class="card_1 text-center" style="width: 70vw; height: auto;">
+              <img src="./asset/img/hockey_3.jpg" class="card-img-top  h-auto  mb-3" alt="imagen1">
+              <div class="card-body">
+                <h3 class="card-title">August 16</h3>
+                <p class="card-text mt-2 mb-2">Season Kick-off: Meet the Teams</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div id="container_card_index" class="d-flex flex-row justify-content-center">
+
+            <div class="card_1 text-center" style="width: 70vw; height: auto;">
+              <img src="./asset/img/hockey_2.jpg" class="card-img-top h-auto mb-3" alt="imagen1">
+              <div class="card-body">
+                <h5 class="card-title">September 1</h5>
+                <p class="card-text mt-2 mb-2">First Game of the Season (Check Game Schedule for details)</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <div id="container_card_index" class="d-flex flex-row justify-content-center">
-          <div class="card_1 text-center" style="width: 70vw; height: auto;" >
-            <img src="./asset/img/hockey_3.jpg" class="card-img-top  h-auto  mb-3" alt="imagen1">
-            <div class="card-body">
-              <h3 class="card-title">August 16</h3>
-              <p class="card-text mt-2 mb-2">Season Kick-off: Meet the Teams</p>
-            </div>
-          </div>
-        </div>
+      <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <section v-if="page=='contact'">
+    <div id="pageheader" style="background-color: #D9D9D9; ">
+      <h1>If you want to contact us</h1>
+    </div>
+    <div class="bodycontent_contact d-flex flex-column text-center align-items-center">
+      <p>Please email us at </p>
+      <a href="mailto:mdhl@chisoccer.org">mdhl@chihockey.org</a>
+      <img src="./asset/img/mdhl_logo.png" alt="imagen_logo">
+      <p class="texto_bodycontact">We will reply to your email as soon as we can.</p>
+    </div>
+  </section>
+
+  <section v-if="page=='game'">
+    <div id="pageheader" style="background-color: #D9D9D9; ">
+      <h1>Fall Schedule</h1>
+      <p class="announcement">*All games take place on Saturday</p>
+    </div>
+    <h1 class="titulo_game">Location</h1>
+    <div class="location_game d-flex flex-column justify-items-center">
+      <div class="btn-group-vertical d-grid" role="group" aria-label="Vertical button group">
+        <button id="mapa1" class="button_game" @click="showModal(`mapa1`)"
+          style="background-color: #38618C; color: white;">AJ Katzenmaier</button>
+        <button id="mapa2" class="button_game" @click="showModal(`mapa2`)"
+          style="background-color: #38618C; color: white;">Greenbay</button>
+        <button id="mapa3" class="button_game" @click="showModal(`mapa3`)"
+          style="background-color: #38618C; color: white;">Howard A Yeager</button>
       </div>
-      <div class="carousel-item">
-        <div id="container_card_index" class="d-flex flex-row justify-content-center">
-          
-          <div class="card_1 text-center" style="width: 70vw; height: auto;" >
-            <img src="./asset/img/hockey_2.jpg" class="card-img-top h-auto mb-3" alt="imagen1">
-            <div class="card-body">
-              <h5 class="card-title">September 1</h5>
-              <p class="card-text mt-2 mb-2">First Game of the Season (Check Game Schedule for details)</p>
-            </div>
-          </div>    
-        </div>
+      <div class="btn-group-vertical d-grid" role="group" aria-label="Vertical button group">
+        <button id="mapa4" class="button_game" @click="showModal(`mapa4`)"
+          style="background-color: #38618C; color: white;">Marjorie P Hart</button>
+        <button id="mapa5" class="button_game" @click="showModal(`mapa5`)"
+          style="background-color: #38618C; color: white;">North</button>
+        <button id="mapa6" class="button_game" @click="showModal(`mapa6`)"
+          style="background-color: #38618C; color: white;">South</button>
       </div>
     </div>
-    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>    
-  
-  
-</div>
 
-<div class="nav_index d-flex justify-content-evenly align-items-center">   
-  <a href="index.html">
-    <svg  class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-          </svg>
-        </a>
-      <a href="contact.html"><svg  class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-rolodex" viewBox="0 0 16 16">
-          <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-          <path d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1H1Zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1V2Z"/>
-        </svg>
-        <a href="about.html"><svg  class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-rolodex" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+    <modal v-if="mostrarmapa===true" @close="mostrarmapa=false">
+      <h3 slot="header">Location</h3>
+      <div slot="body">
+        <iframe v-bind:src="urlmap" width="250" height="180" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <button @click="mostrarmapa=false" slot="footer">Ok</button>
+    </modal>
+
+    <div class="d-flex flex-column align-items-center m-4">
+      <h1 class="titulo_game text-center">September Games</h1>
+      <div class="" style="color: white;">
+        <table class="table table-bordered table-light text-center">
+          <thead>
+            <th>Teams</th>
+            <th>Location</th>
+            <th>Times</th>
+          </thead>
+          <tbody>
+            <tr class="table-dark">
+              <td colspan="3">9/01 </td>
+            </tr>
+            <tr>
+              <td>U1 and U4</td>
+              <td>AJ Katzenmaier</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U3 and U2</td>
+              <td>Greenbay</td>
+              <td>1:00 p.m.</td>
+            </tr>
+            <tr class="table-dark">
+              <td colspan="3">9/08 </td>
+            </tr>
+            <tr>
+              <td>U5 and U6</td>
+              <td>Howard A Yeager</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U6 and U1</td>
+              <td>Marjorie P Hart</td>
+              <td>1:00 p.m.</td>
+            <tr>
+            <tr class="table-dark">
+              <td colspan="3">9/15 </td>
+            </tr>
+            <tr>
+              <td>U2 and U4</td>
+              <td>North</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U3 and U5</td>
+              <td>AJ Katzenmaier</td>
+              <td>1:00 p.m.</td>
+            <tr>
+            <tr class="table-dark">
+              <td colspan="3">9/22</td>
+            </tr>
+            <tr>
+              <td>U1 and U3</td>
+              <td>South</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U2 and U6</td>
+              <td>Howard A Yeager</td>
+              <td>1:00 p.m.</td>
+            <tr>
+            <tr class="table-dark">
+              <td colspan="3">9/29 </td>
+            </tr>
+            <tr>
+              <td>U4 and U5</td>
+              <td>Greenbay</td>
+              <td>9:30 a.m.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center m-4">
+      <h1 class="titulo_game text-center">October Games</h1>
+      <div class="" style="color: white;">
+        <table class="table table-bordered table-light text-center">
+          <thead>
+            <th>Teams</th>
+            <th>Location</th>
+            <th>Times</th>
+          </thead>
+          <tbody>
+            <tr class="table-dark">
+              <td colspan="3">10/06</td>
+            </tr>
+            <tr>
+              <td>U2 and U5</td>
+              <td>Marjorie P Hart</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U1 and U6</td>
+              <td>South</td>
+              <td>1:00 p.m.</td>
+            </tr>
+            <tr class="table-dark">
+              <td colspan="3">10/08 </td>
+            </tr>
+            <tr>
+              <td>U3 and U4</td>
+              <td>Howard A Yeager</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U5 and U1</td>
+              <td>Greenbay</td>
+              <td>1:00 p.m.</td>
+            <tr>
+            <tr class="table-dark">
+              <td colspan="3">10/20 </td>
+            </tr>
+            <tr>
+              <td>U6 and U3</td>
+              <td>North</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U2 and U4</td>
+              <td>Marjorie P Hart</td>
+              <td>1:00 p.m.</td>
+            <tr>
+            <tr class="table-dark">
+              <td colspan="3">10/27</td>
+            </tr>
+            <tr>
+              <td>U3 and U1</td>
+              <td>AJ Katzenmaier</td>
+              <td>9:30 a.m.</td>
+            </tr>
+            <tr>
+              <td>U5 and U6</td>
+              <td>Howard A Yeager</td>
+              <td>1:00 p.m.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+        <div class="mb-5" style=" color: white; font-weight: 700;">
+          <h4 class="fw-bold text-center text-decoration-underline"> Additional Information</h4>
+          <div>
+            <p> If deemed necessary by MDHL, games may be shortened or cancelled due to extreme weather conditions.</p>
+            <p><strong>Please direct all questions to:</strong> Michael Randall, League Coordinator</p>
+            <address>
+              <p><span><strong>Phone:</strong> (630) 690-8132</span></p>
+              <p><strong>Email:</strong> <a
+                  href="mailto:michael.randall@chihockey.org">michael.randall@chihockey.org</a>
+              </p>
+            </address>
+          </div>
+        </div>
+      
+  </section>
+
+  <section v-if="page=='rules'">
+    <div class="titlecenter">
+      <p>FIFA rules shall govern MDHL play except as modified herein.</p>
+    </div>
+
+    <div class="acordions_rules">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Sportsmanship
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>The common interest that members of the Association share is to inspire youth to practice the ideals of
+                sportsmanship and fair play. Any player, coach, team, parent, spectator, administrator or referee whose
+                behavior detracts from this purpose is subject to disciplinary action regardless of technical soccer
+                background, expertise, accomplishments or standing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Fifa Field Regulations
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ol>
+                <li>
+                  <h3>Dimensions.</h3> FIFA Law 1 provides for flexible external field dimensions within a given maximum
+                  and minimum width and length. These dimensions should be adhered to for all fields used by teams under
+                  12 and older.
+                </li>
+
+                <li>
+                  <h3>Competition Fields.</h3> Fields used within the competition program must be a minimum of 100 x 60
+                  yards. Leagues, districts or associations participating in the state competition program that are
+                  unable to provide a field that meets these minimum requirements must advise the State Competition
+                  Board which will assign its Fields Committee to inspect the field and recommend to the Board whether
+                  or not a waiver of the minimum dimensions should be granted. Teams from leagues, districts or
+                  associations that are unable to provide an acceptable field may be required to play all their games
+                  away.
+                </li>
+
+                <li>
+                  <h3>Fields Used By Young Age Groups.</h3>
+                  <ol type="a">
+                    <li>U-6 play on a field approximately 20 X 40 yards with no penalty areas. Fields for older age
+                      groups should be progressively larger.</li>
+                    <li>U-8 plays on a field 40-50 yards in length and 20-30 yards width.</li>
+                    <li>U-10 play on a field 70-80 yards in length and 40-50 yards in width.</li>
+                    <li>In addition, fields used by young age groups may have their internal dimensions and size of goal
+                      similarly modified.</li>
+                  </ol>
+                </li>
+
+                <li>
+                  <h3>Team Bench Areas</h3>
+                  <ol type="a">
+                    <li>Recreation &amp; District Programs
+                      <ul>
+                        <li>The decision for team/spectator placement on the field will be made by the governing body of
+                          that team. A team's bench area shall consist of that area at least one (1) yard away from the
+                          touchline and extending to twenty yards (20) both ways from the halfway line. In the event
+                          that field 2 conditions require team benches to be on the same side of the field, a team's
+                          bench area shall consist of that area two(2) yards away from the touchline and extending
+                          twenty yards one (1) way from the halfway line.</li>
+                        <li>The home team has first choice as to where it wishes to locate its bench area. Coaches and
+                          substitutes are required to remain within their bench area during the game. Parents and
+                          spectators should occupy the same side of the field as the team they are supporting.</li>
+                      </ul>
+                    </li>
+                    <li>State Competition League Only
+                      <ul>
+                        <li>Except where it is determined by the referee to be impractical, team bench areas shall be
+                          along the same touchline. Each team bench area shall be located two yards outside the
+                          touchline, beginning not closer than five yards from midfield and extending not further than
+                          twenty yards from midfield. The home team shall have the right to choose the location of its
+                          bench area. Coaches and substitutes must remain within their team's bench area during the
+                          game.</li>
+                        <li>Parents and spectators must occupy the sideline opposite the team bench areas. Supporters of
+                          a team must assemble on the side of the midfield facing the team bench area of that team.
+                          There shall be a buffer zone extending ten yards on each side of the midfield that may not be
+                          occupied by parents or spectators. Match officials shall be empowered to enforce these
+                          provisions and may suspend or terminate games in the event that any team, coach, parent, or
+                          spectator declines to abide by requests from match officials to comply with these standards.
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Equipment
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>We will abide by and accept equipment standards as defined by FIFA, USSF and USYSA.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              Number of Players
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingFour"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul>
+                <li>
+                  <h3>Team Size.</h3> Except as noted below, below, team rosters shall consist of not less than eleven
+                  nor more than eighteen players. A team must have at least seven (7) players present and able to play
+                  before referees are permitted to start a sanctioned game. No more than eleven (11) players per team
+                  may be on the field at any one time during the game.
+                </li>
+                <li>
+                  <h3>Size of Age Group Teams.</h3> In order to give player's maximum opportunity to develop in the game
+                  of soccer, U-6 through U-1O play modified rules and size of roster as stated in United States Youth
+                  Soccer Association (USYSA) rules. It is strongly recommended that U-6 and U-8 play 4 v 4. UYSA shall
+                  not sanction games involving teams under 10 or younger unless such games are conducted with not more
+                  than eight (8) players per side. (National rule 4036 section 2)
+                </li>
+                <li>Recreational/Developmental players at other ages or where numbers in the playing area are low are
+                  strongly encouraged to play small-sided games on reduced field size.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+              Substitutions
+            </button>
+          </h2>
+          <div id="flush-collapseFive" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingFive"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul>
+                <li>Teams may make an unlimited number of substitutions at the times indicated below. A player who has
+                  been replaced may re-enter the game as a substitute at a later time.
+                  <ol>
+                    <li>Prior to a throw-in your favor.</li>
+                    <li>Prior to a goalkick by either team.</li>
+                    <li>After a goal by either team.</li>
+                    <li>After an injury, by either team, when the referee stops play.</li>
+                    <li>At half time.</li>
+                    <li>When a player has been &quot;cautioned&quot;, only the player receiving &quot;caution&quot; may
+                      be substituted.</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+              Confiscated Player Passes
+            </button>
+          </h2>
+          <div id="flush-collapseSix" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingSix"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>Passes of any individual(s) ejected from any match shall be retained after the match by the referee.
+                The pass of any individual who has received a third caution (yellow card) during a playing year shall be
+                confiscated by the referee at the conclusion of the match in which the third caution was received. That
+                player will be suspended from playing in the next game in which the offending participant would
+                otherwise be eligible to participate. This process will continue so that for every third yellow card
+                received during a playing year, the player will be suspended from playing in the next game (after the
+                receipt of a third yellow card) for which the offending participate would otherwise be eligible to
+                participate. The referee shall deliver all confiscated passes to the UYSA State Office within
+                forty-eight (48) hours of the conclusion of the match.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSeven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+              All-Play
+            </button>
+          </h2>
+          <div id="flush-collapseSeven" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingSeven"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+              <p>All-play means that every recreation player on every team shall play at least fifty percent of each
+                game. Coaches in the competition program are encouraged to play their players 50% of each game.
+              <ul style="list-style-type:circle;">
+                <li>A Coach shall be permitted to not play a player 50% of each game under special circumstances, e.g.,
+                  unexcused absences from practice and/or games, ungentlemanly conduct at practice and/or games, and
+                  injuries.</li>
+              </ul>
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingEight">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+              Player's Equipment
+            </button>
+          </h2>
+          <div id="flush-collapseEight" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingEight"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>Where the uniform colors of both teams are so similar that the referee orders a change, the designated
+                home team must change to colors distinct from those of the opponent.
+              <p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingNine">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+              Mixed Teams
+            </button>
+          </h2>
+          <div id="flush-collapseNine" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingNine"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul>
+                <li>
+                  <h3>Girls Playing On Boys' Teams.</h3> Girls are eligible to play on boys'teams with parent/guardian
+                  permission.
+                </li>
+                <li>
+                  <h3>Types of Teams.</h3> Teams with females only are Girls Teams. All others are Boys Teams.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+              Coaching from the Sidelines
+            </button>
+          </h2>
+          <div id="flush-collapseTen" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingTen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul>
+                <li>Coaching from the sidelines, i.e., giving direction to one's own team on points of strategy and
+                  position, is permitted provided that:
+                  <ol>
+                    <li>No mechanical, electrical or other devices are used to amplify the voice.</li>
+                    <li>The tone of voice is informative and not a harangue.</li>
+                    <li>The coaching takes place within the team's bench area.</li>
+                    <li>No coach, substitute, player or spectator is to make derogatory remarks or gestures to the
+                      referees, linesmen, players, substitutes or spectators.</li>
+                    <li>No coach, player, substitute or spectator is to use profanity or incite, in any manner,
+                      disruptive behavior of any kind.</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingEleven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+              Game Termination
+            </button>
+          </h2>
+          <div id="flush-collapseEleven" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingEleven"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>Any game terminated after 15 minutes into the second half by the referee by reason of the elements, or
+                by reason of grave disorder on the part of the coaches, players or spectators of a team that is losing
+                at the point that the game is terminated, shall stand as a completed game. If a team is ahead and the
+                game is called because of their actions they will lose the game 1-0.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwelve">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+              Conditions of Replay of Games
+            </button>
+          </h2>
+          <div id="flush-collapseTwelve" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingTwelve"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul>
+                <li>Any game which is required to be replayed as a result of any protest orappeal, shall be subject to
+                  the following conditions:
+                  <ol>
+                    <li>The game shall be replayed on the same field, as was the suspended or protested game, unless
+                      otherwise agreed by the coaches.</li>
+                    <li>Impartial referees shall be assigned to the new game.</li>
+                    <li>The PROTEST AND APPEALS COMMITTEE shall have the power to impose such additional conditions on
+                      the replay of the game, as it deems appropriate under the circumstances.</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThirteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+              Referee Responsibilities
+            </button>
+          </h2>
+          <div id="flush-collapseThirteen" class="accordion-collapse collapse"
+            style="background-color:#38618C; color: white ;" aria-labelledby="flush-headingThirteen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <ul>
+                <li> The referee shall verify the identity of the players and coaches with his/her player pass. He shall
+                  collect the passes of those players and coaches who are to participate in the game. The referee must
+                  allow no player into the game for whom he/she has no pass.</li>
+                <li>Upon completion of the game, the referee shall send his/her report to the UYSA offices within four
+                  (4) days, holidays excluded. If a coach or a player is ejected, the referee report form is required
+                  within forty-eight (48) hours along with the player/coach pass.</li>
+                <li>A referee report form must be filed for every game played.</li>
+                <li>Each team must determine whether or not referees are registered prior to the start of each game.
+                  Upon request, referees officiating at any game must willingly and without bias, show documentation
+                  regarding their certification level and registration standing with the USSF to coach, assistant coach,
+                  or team captain of teams participating in that game. Prior to the game a coach may decide to postpone
+                  the game if the referees do not produce the requested documentation. The game is to be replayed at a
+                  later date.</li>
+                <li>Referees not complying with this section will be referred to the Disciplinary Committee.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section v-if="page=='about'">
+    <div class="bodycontent_about d-flex flex-column ">
+      <div class="imagen_about">
+        <img src="./asset/img/hockey_2.jpg" alt="imagen_about">
+      </div>
+      <div class="acordions_about">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M9,7H15A2,2 0 0,1 17,9V17H15V9H13V16H11V9H9V17H7V9A2,2 0 0,1 9,7M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z" />
+                </svg>&nbsp;&nbsp;
+                Misión
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">To support young athletes living in Chicago's northside neighborhoods, who
+                have an interest in learning and playing soccer, with opportunities to learn and practice skills related
+                to the game of soccer, specifically those skills around team cooperation and good sportsmanship.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M9,7H11L12,12L13,7H15L13,17H11L9,7M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z" />
+                </svg>&nbsp;&nbsp;
+                Visión
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body"> The Mighty Ducks Hockey League aspires to develop strong, well-rounded, and
+                mindful athletes through the building of character, self-discipline, and leadership.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M11,7H15V9H11V15H13V11H15V15A2,2 0 0,1 13,17H11A2,2 0 0,1 9,15V9A2,2 0 0,1 11,7M3,5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5M5,5V19H19V5H5Z" />
+                </svg>&nbsp;&nbsp;
+                General Information
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">The Mighty Ducks Hockey League was established in 1996 to provide athletes
+                residing in Chicago's northside neighborhoods an environment in which to learn and play soccer. To be a
+                member of MDHL, you must be between the ages of 4 - 12 and reside in a Chicago northside neighborhood.
+                MDHL is run by a small full-time staff, and relies on the generous volunteer time of parents and
+                previous league members.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <div class="nav_index d-flex justify-content-evenly align-items-center">
+    <button @click="page='home'">
+      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        class="bi bi-house-door-fill" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
       </svg>
-        
-        <a href="rules.html"><svg  class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-rolodex" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M17.5 14.33C18.29 14.33 19.13 14.41 20 14.57V16.07C19.38 15.91 18.54 15.83 17.5 15.83C15.6 15.83 14.11 16.16 13 16.82V15.13C14.17 14.6 15.67 14.33 17.5 14.33M13 12.46C14.29 11.93 15.79 11.67 17.5 11.67C18.29 11.67 19.13 11.74 20 11.9V13.4C19.38 13.24 18.54 13.16 17.5 13.16C15.6 13.16 14.11 13.5 13 14.15M17.5 10.5C15.6 10.5 14.11 10.82 13 11.5V9.84C14.23 9.28 15.73 9 17.5 9C18.29 9 19.13 9.08 20 9.23V10.78C19.26 10.59 18.41 10.5 17.5 10.5M21 18.5V7C19.96 6.67 18.79 6.5 17.5 6.5C15.45 6.5 13.62 7 12 8V19.5C13.62 18.5 15.45 18 17.5 18C18.69 18 19.86 18.16 21 18.5M17.5 4.5C19.85 4.5 21.69 5 23 6V20.56C23 20.68 22.95 20.8 22.84 20.91C22.73 21 22.61 21.08 22.5 21.08C22.39 21.08 22.31 21.06 22.25 21.03C20.97 20.34 19.38 20 17.5 20C15.45 20 13.62 20.5 12 21.5C10.66 20.5 8.83 20 6.5 20C4.84 20 3.25 20.36 1.75 21.07C1.72 21.08 1.68 21.08 1.63 21.1C1.59 21.11 1.55 21.12 1.5 21.12C1.39 21.12 1.27 21.08 1.16 21C1.05 20.89 1 20.78 1 20.65V6C2.34 5 4.18 4.5 6.5 4.5C8.83 4.5 10.66 5 12 6C13.34 5 15.17 4.5 17.5 4.5Z" />
-        </svg></a>
-        <a href="game.html">
-          <svg class="svg" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12,5C6.5,5 2,6.57 2,8.5C2,10.43 6.5,12 12,12C17.5,12 22,10.43 22,8.5C22,6.57 17.5,5 12,5M2,11.76V16.5C2,18.43 6.5,20 12,20C17.5,20 22,18.43 22,16.5V11.76C21.33,12.22 20.58,12.57 19.73,12.86C17.62,13.6 14.95,14 12,14C9.05,14 6.38,13.6 4.27,12.86C3.42,12.57 2.67,12.22 2,11.76Z" />
-        </svg>
-        </a>
-  </div> 
+    </button>
+    <button @click="page='contact'">
+      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        class="bi bi-person-rolodex" viewBox="0 0 16 16">
+        <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+        <path
+          d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1H1Zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1V2Z" />
+      </svg>
+    </button>
+
+    <button @click="page='about'">
+      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        class="bi bi-person-rolodex" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+      </svg>
+    </button>
+
+    <button @click="page='rules'"><svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        fill="currentColor" class="bi bi-person-rolodex" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M17.5 14.33C18.29 14.33 19.13 14.41 20 14.57V16.07C19.38 15.91 18.54 15.83 17.5 15.83C15.6 15.83 14.11 16.16 13 16.82V15.13C14.17 14.6 15.67 14.33 17.5 14.33M13 12.46C14.29 11.93 15.79 11.67 17.5 11.67C18.29 11.67 19.13 11.74 20 11.9V13.4C19.38 13.24 18.54 13.16 17.5 13.16C15.6 13.16 14.11 13.5 13 14.15M17.5 10.5C15.6 10.5 14.11 10.82 13 11.5V9.84C14.23 9.28 15.73 9 17.5 9C18.29 9 19.13 9.08 20 9.23V10.78C19.26 10.59 18.41 10.5 17.5 10.5M21 18.5V7C19.96 6.67 18.79 6.5 17.5 6.5C15.45 6.5 13.62 7 12 8V19.5C13.62 18.5 15.45 18 17.5 18C18.69 18 19.86 18.16 21 18.5M17.5 4.5C19.85 4.5 21.69 5 23 6V20.56C23 20.68 22.95 20.8 22.84 20.91C22.73 21 22.61 21.08 22.5 21.08C22.39 21.08 22.31 21.06 22.25 21.03C20.97 20.34 19.38 20 17.5 20C15.45 20 13.62 20.5 12 21.5C10.66 20.5 8.83 20 6.5 20C4.84 20 3.25 20.36 1.75 21.07C1.72 21.08 1.68 21.08 1.63 21.1C1.59 21.11 1.55 21.12 1.5 21.12C1.39 21.12 1.27 21.08 1.16 21C1.05 20.89 1 20.78 1 20.65V6C2.34 5 4.18 4.5 6.5 4.5C8.83 4.5 10.66 5 12 6C13.34 5 15.17 4.5 17.5 4.5Z" />
+      </svg></button>
+    <button @click="page='game'">
+      <svg class="svg" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M12,5C6.5,5 2,6.57 2,8.5C2,10.43 6.5,12 12,12C17.5,12 22,10.43 22,8.5C22,6.57 17.5,5 12,5M2,11.76V16.5C2,18.43 6.5,20 12,20C17.5,20 22,18.43 22,16.5V11.76C21.33,12.22 20.58,12.57 19.73,12.86C17.62,13.6 14.95,14 12,14C9.05,14 6.38,13.6 4.27,12.86C3.42,12.57 2.67,12.22 2,11.76Z" />
+      </svg>
+    </button>
+  </div>
 
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
-  
+
     // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyBBGNYYZZC7uCZyyr81KATh3G-SWyFJAko",
@@ -136,11 +797,44 @@
       messagingSenderId: "143254170692",
       appId: "1:143254170692:web:b25fce95eeb312eb076011"
     };
-  
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
   </script>
   <script src="https://unpkg.com/vue@3"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script type="text/x-template" id="modal-template">
+      <transition name="modal">
+        <div v-if="show" class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container">
+              <div class="modal-header">
+                <slot name="header">
+                  default header
+                </slot>
+              </div>
+              <div class="modal-body">
+                <slot name="body">
+                  default body
+                </slot>
+              </div>
+
+              <div class="modal-footer">
+                <slot name="footer">
+                  <button class="modal-default-button" @click="$emit('close') "   >
+                     OK
+                  </button>
+                </slot>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </script>
+  <script src="./script.js"></script>
+
 </body>
+
 </html>

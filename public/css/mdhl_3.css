@@ -1,14 +1,17 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- body {
-  font-family: Helvetica, Verdana, Arial, sans-serif; 
+.body_index {
+  background-image: url(../asset/img/image_fondo2.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
-.nav_index{
-  background-color: #38618C;
+.nav_index {
+  background-color: #38618c;
   position: absolute;
   position: fixed;
   bottom: 0;
@@ -17,92 +20,112 @@
   height: 60px;
   z-index: 1;
 }
-.nav_index  a{
+.nav_index a {
   list-style-type: none;
   color: white;
-
+}
+.nav_index button {
+  background: none;
+  border: 0;
+  color: white;
 }
 
-.svg{
+.svg {
   width: 24px;
   height: 24px;
-} 
+}
 
 a:link {
   text-decoration: none;
 }
 
-.header_index{
+.header_index {
   width: auto;
   height: auto;
   position: fixed;
   left: 0;
-  top:0;
+  top: 0;
   width: 100%;
   right: 0;
   z-index: 1;
 }
 
-.header_index .title_index{
-  background-color: #38618C;
+.header_index .title_index {
+  background-color: #38618c;
   padding: 20px;
   font-weight: 700;
   width: auto;
   height: 50px;
   color: white;
   align-items: center;
-
 }
 
-.header_index svg{
+.header_index svg {
   width: auto;
 }
-.header_index button{
-  background-color: #38618C;
+.header_index button {
+  background-color: #38618c;
   color: white;
   border: none;
 }
 
-.title_index h1, #pageheader h1{
+.title_index h1,
+#pageheader h1 {
+  
   font-size: 18px;
   align-items: center;
 }
-
-
-#container_card_index{
-margin-top: 160px;
+#pageheader {
+  position: relative;
+  margin-top: 50px;
+  text-align: center;
 }
 
-.carousel-control-next, .carousel-control-prev{
-  margin-top: 160px;
+#container_card_index {
+  margin-top: 100px;
 }
 
- .card_1{
+.carousel-control-next,
+.carousel-control-prev {
+  margin-top: 140px;
+}
+
+.card_1 {
   border: 2px solid black;
   border-radius: 15px;
   background-color: white;
 }
 
+@media (min-width: 576px) {
+  .card_1 {
+    margin-bottom: 60px;
+    max-height: 50%;
+    max-width: 50%;
+  }
 
-.card_1 .card-img-top{
-  height: auto;
-
-  border-radius: 15px 15px 0 0; 
-} 
-
-
- #pageheader{
-  text-align: center;
+  .carousel-control-next,
+  .carousel-control-prev {
+    margin-top: 0;
+  }
+  #container_card_index{
+    margin: auto;
+    width: 50%;
+  }
 }
 
-.bodycontent_contact{
-  margin-top: 100px;
+.card_1 .card-img-top {
+  height: auto;
+  border-radius: 15px 15px 0 0;
+}
+
+.bodycontent_contact {
+  margin-top: 50px;
   color: white;
   justify-items: center;
   font-size: 20px;
 }
 
-.bodycontent_contact img{
+.bodycontent_contact img {
   width: 300px;
   height: auto;
   margin-top: 30px;
@@ -115,106 +138,100 @@ margin-top: 160px;
   text-decoration: underline;
 }
 
-.texto_bodycontact{
+.texto_bodycontact {
   margin-bottom: 60px;
 }
-.imagen_about{
+.imagen_about {
   display: flex;
   flex-direction: column;
- align-items: center; 
+  align-items: center;
 }
-.imagen_about img{
+.imagen_about img {
   margin-top: 100px;
   width: 280px;
   height: auto;
   border-radius: 15px;
 }
 
-.acordions_about{
+.acordions_about {
   margin-top: 70px;
   border: 1px solid white;
-  
 }
-.accordion-button{
- background-color: #6BBF59;
-  color: white; 
+.accordion-button {
+  background-color: hsla(211, 43%, 38%, 0.564);
+  color: white;
 }
 
-.acordions_rules{
+.acordions_rules {
   margin-bottom: 50px;
 }
 
-.titlecenter{
+.titlecenter {
   margin-top: 80px;
   padding: 10px;
   text-align: center;
   color: white;
 }
 
-.bodycontent_register{
-  background-color: #6BBF59;
+.bodycontent_register {
+  background-color: #6bbf59;
   margin-top: 80px;
   color: white;
   font-weight: 700;
 }
 
-fieldset{
+fieldset {
   margin: 0.2em 1em;
-  border:solid 1px white;
+  border: solid 1px white;
 }
 
-
-
-.stylized input{
+.stylized input {
   margin: 0.2em 1em;
   border-top: 1px solid white;
   text-align: center;
 }
 
-.stylized label{
+.stylized label {
   font-size: large;
 }
 
-.contract_register{
+.contract_register {
   margin: 0.2em 0.1em;
 }
 
-.button_register{
+.button_register {
   margin-bottom: 60px;
-  color: rgb(255, 255, 255); 
-  font-size: 16px; 
-  line-height: 16px; 
-  padding: 6px; 
-  border-radius: 10px; 
-  font-family: Georgia, serif; 
-  font-weight: 700; 
-  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
-  background-color: #38618C;
-border: 2px solid rgb(28, 110, 164); 
-width: 200px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px;
+  border-radius: 10px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  background-color: #38618c;
+  border: 2px solid rgb(28, 110, 164);
+  width: 200px;
 }
 
-.btn-group-vertical{
+.btn-group-vertical {
   display: flex;
   flex-direction: row;
   text-align: center;
   align-items: center;
-  
-
 }
 
 .accordion-button::after {
   width: 0;
   height: 0;
-  
 }
 
-.titulo_location{
-  margin-top: 105px;
+.titulo_game {
+  color: white;
   text-align: center;
 }
 
-.container_game_add{
+.container_game_add {
   margin-top: 5px;
   margin-bottom: 80px;
   align-items: center;
@@ -278,7 +295,7 @@ width: 200px;
   transform: scale(1.1);
 }
 
-.input_login{
+.input_login {
   margin: 0.2em 1em;
   border: 1px solid black;
   text-align: center;
