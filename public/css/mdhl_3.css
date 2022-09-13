@@ -256,29 +256,37 @@ fieldset {
 }
 
 .modal-container {
-  width: 250px;
-  height: 250px;
+  width: 310px;
+  height: 290px;
   margin: 0px auto;
   padding: 30px 30px;
-  background-color: #fff;
+  background: #38618C;
+  background: -moz-linear-gradient(top, #38618C 0%, #6BBF59 100%, #144E75 100%);
+  background: -webkit-linear-gradient(top, #38618C 0%, #6BBF59 100%, #144E75 100%);
+  background: linear-gradient(to bottom, #38618C 0%, #6BBF59 100%, #144E75 100%);
   border-radius: 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
+.modal-header{
+  color: white;
+}
+.modal-header h6 {
   margin-top: 0;
-  color: #42b983;
-  text-align: center;
+  color: white;
 }
 
-.modal-body {
-  margin: 20px 0;
+.modal-body_login {
+ color:white;
 }
 
 .modal-default-button {
   float: right;
+  background-color: #38618C;
+  color: white;
+  border-radius: 15px;
 }
 
 .modal-enter {
@@ -298,5 +306,18 @@ fieldset {
 .input_login {
   margin: 0.2em 1em;
   border: 1px solid black;
+  border-radius: 15px;
   text-align: center;
+}
+
+.modal-body_login img{
+  width: 48px;
+  height: 48px;
+
+}
+.modal-body_login{
+  background: #38618C;
+  background: -moz-linear-gradient(top, #38618C 0%, #6BBF59 100%, #144E75 100%);
+  background: -webkit-linear-gradient(top, #38618C 0%, #6BBF59 100%, #144E75 100%);
+  background: linear-gradient(to bottom, #38618C 0%, #6BBF59 100%, #144E75 100%);
 }

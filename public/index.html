@@ -16,7 +16,7 @@
   <header class="header_index">
     <div class="title_index d-flex flex-row justify-content-between align-items-center">
       <h1>Mighty Ducks Hockey League</h1>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
           <path fill="currentColor"
             d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z" />
@@ -27,22 +27,25 @@
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header text-center" style="color: black;">
-          <h5 class="modal-title" id="exampleModalLabel">LOG IN</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body d-flex flex-column text-center">
+      <div  class="modal-content">
+        <div class="modal-body_login d-flex flex-column text-center align-items-center">
+          <div class="modal-header d-flex flex-row justify-content-between" style="color: black;"> 
+            <h6 class="modal-title" id="exampleModalLabel">LOG IN</h6>
+            <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="./asset/img/icons8-male-female-user-group-48.png" alt="imagenlogin">
           <label for="namesesion">Name:</label>
           <input type="text" class="input_login">
           <label for="password">Pasword:</label>
           <input type="password" class="input_login">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Log in</button>
+          <div class="m-2">
+            <button type="button" class="btn btn-secondary  m-2" style="color: white;"  data-bs-dismiss="modal">Register</button>
+            <button type="button" class="btn" style="background: #38618C; color: white;">Log in</button>
+          </div>
         </div>
       </div>
+
+
     </div>
   </div>
   <section v-if="page =='home'">
@@ -137,13 +140,26 @@
       </div>
     </div>
 
-    <modal v-if="mostrarmapa===true" @close="mostrarmapa=false">
-      <h3 slot="header">Location</h3>
-      <div slot="body">
-        <iframe v-bind:src="urlmap" width="250" height="180" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <modal class="modal-mask" v-if="mostrarmapa===true" @close="mostrarmapa=false">
+      <div class="modal-wrapper">
+
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="" slot="header">Location</h3>
+          </div>
+          <div class="modal-body ">
+
+            <div class="" slot="body">
+              <iframe v-bind:src="urlmap" width="250" height="180" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="modal-default-button" @click="mostrarmapa=false" slot="footer">Cerrar</button>
+          </div>
+        </div>
       </div>
-      <button @click="mostrarmapa=false" slot="footer">Ok</button>
     </modal>
 
     <div class="d-flex flex-column align-items-center m-4">
@@ -742,6 +758,199 @@
           </div>
         </div>
       </div>
+  </section>
+
+  <section v-if="page=='register'" class="bodycontent_register">
+    <div id="pageheader" style="background-color: #D9D9D9; ">
+      <h1>Registration Form</h1>
+    </div>  
+    <form method="get" action="show_data.html"> 
+      <div class="stylized d-flex flex-column text-center">
+        <label for="first_name">Player's First Name:</label>
+        <input type="text" name="first_name" id="first_name"/>
+        
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name"/>
+       
+        <label for="street_address">Street Address:</label>
+        <input type="text" name="street_address" id="street_address"/>
+        
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city"/>
+       
+        <label for="zip">Zip Code:</label>
+        <input type="text" name="zip" id="zip"/>
+        
+        <label for="birth_date">Birth Date (mm/dd/yyyy):</label>
+        <input type="text" name="birth_date" id="birth_date"/>
+        
+        <label for="parent_guardian">Parent/Guardian Name:</label>
+        <input type="text" name="parent_guardian" id="parent_guardian"/>
+        
+        <label for="contact_phone">Contact Phone:</label>
+        <input type="text" name="contact_phone" id="contact_phone"/>
+        
+        <label for="contact_email">Contact Email:</label>
+        <input type="text" name="contact_email" id="contact_email"/>          
+   
+      <fieldset>
+        <legend>Gender:</legend>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female"/>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male"/>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Grade:</legend>
+        <div>
+          <label for="pre_school">Pre-School</label>
+          <input type="radio" name="grade" id="pre_school" value="pre_school"/>
+        </div>
+        <div>
+          <label for="1st">1st</label>
+          <input type="radio" name="grade" id="1st" value="1st"/>
+          <label for="2nd">2nd</label>
+          <input type="radio" name="grade" id="2nd" value="2nd"/>
+          <label for="3rd">3rd</label>
+          <input type="radio" name="grade" id="3rd" value="3rd"/>
+        </div>
+        <label for="4th">4th</label>
+        <input type="radio" name="grade" id="4th" value="4th"/>
+        <label for="5th">5th</label>
+        <input type="radio" name="grade" id="5th" value="5th"/>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Which elementary schools do you live near?</legend>
+        <label for="school_1" class="impinfo">First Closest School:</label>
+        <select name="school_1" id="school_1">
+          <option value="katzenmaier">AJ Katzenmaier</option>
+          <option value="greenbay">Greenbay</option>
+          <option value="yeager">Howard A Yeager</option>
+          <option value="hart">Marjorie P Hart</option>
+          <option value="north">North Elementary</option>
+          <option value="south">South Elementary</option>
+        </select>
+
+        <label for="school_2" class="impinfo">Second Closest School:</label>
+        <select name="school_2" id="school_2">
+          <option value="katzenmaier">AJ Katzenmaier</option>
+          <option value="greenbay">Greenbay</option>
+          <option value="yeager">Howard A Yeager</option>
+          <option value="hart">Marjorie P Hart</option>
+          <option value="north">North Elementary</option>
+          <option value="south">South Elementary</option>
+        </select>
+      </fieldset>
+      
+      <fieldset>
+        <legend>What position(s) do you normally play? <span class="note">(check all that apply)</span></legend>
+        <label for="n_forward">Forward</label>
+        <input type="checkbox" name="normal_position" id="n_forward" value="n_forward"/>
+        <label for="n_defense">Defense</label>
+        <input type="checkbox" name="normal_position" id="n_defense" value="n_defense"/>
+        <label for="n_midfield">Midfield</label>
+        <input type="checkbox" name="normal_position" id="n_midfield" value="n_midfield"/>
+        <label for="n_goalkeeper">Goalkeeper</label>
+        <input type="checkbox" name="normal_position" id="n_goalkeeper" value="n_goalkeeper"/>
+      </fieldset>
+      
+      <fieldset>
+        <legend>What position(s) do you want to play? <span class="note">(check all that apply)</span></legend>
+        <label for="w_forward">Forward</label>
+        <input type="checkbox" name="want_position" id="w_forward" value="w_forward"/>
+        <label for="w_defense">Defense</label>
+        <input type="checkbox" name="want_position" id="w_defense" value="w_defense"/>
+        <label for="w_midfield">Midfield</label>
+        <input type="checkbox" name="want_position" id="w_midfield" value="w_midfield"/>
+        <label for="w_goalkeeper">Goalkeeper</label>
+        <input type="checkbox" name="want_position" id="w_goalkeeper" value="w_goalkeeper"/>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Jersey Size:</legend>
+        <span class="uniformchoice ">
+          <div>
+            <label for="j_y_small">Youth Small</label>
+            <input type="radio" name="jersey_size" id="j_y_small" value="j_y_small"/>
+          </div>
+          <div>
+            <label for="j_y_medium">Youth Medium</label>
+            <input type="radio" name="jersey_size" id="j_y_medium" value="j_y_medium"/>
+          </div>
+          <div>
+            <label for="j_y_large">Youth Large</label>
+            <input type="radio" name="jersey_size" id="j_y_large" value="j_y_large"/>
+          </div>
+          <div>
+            <label for="j_small">Small</label>
+            <input type="radio" name="jersey_size" id="j_small" value="j_small"/>
+            <label for="j_medium">Medium</label>
+            <input type="radio" name="jersey_size" id="j_medium" value="j_medium"/>
+          </div>
+
+          <div>
+            <label for="j_large">Large</label>
+            <input type="radio" name="jersey_size" id="j_large" value="j_large"/>
+            <label for="j_x_large">Extra-Large</label>
+            <input type="radio" name="jersey_size" id="j_x_large" value="j_x_large"/>
+          </div>
+        </span>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Shorts Size:</legend>
+        <span class="uniformchoice">
+          <div>
+            <label for="s_y_small">Youth Small</label>
+            <input type="radio" name="shorts_size" id="s_y_small" value="s_y_small"/>
+          </div>
+          <div>
+            <label for="s_y_medium">Youth Medium</label>
+            <input type="radio" name="shorts_size" id="s_y_medium" value="s_y_medium"/>
+          </div>
+          <div>
+            <label for="s_y_large">Youth Large</label>
+            <input type="radio" name="shorts_size" id="s_y_large" value="s_y_large"/>
+          </div>
+        <div>
+          <label for="s_small">Small</label>
+          <input type="radio" name="shorts_size" id="s_small" value="s_small"/>
+          <label for="s_medium">Medium</label>
+          <input type="radio" name="shorts_size" id="s_medium" value="s_medium"/>
+        </div>
+          <label for="s_large">Large</label>
+          <input type="radio" name="shorts_size" id="s_large" value="s_large"/>
+          <label for="s_x_large">Extra-Large</label>
+          <input type="radio" name="shorts_size" id="s_x_large" value="s_x_large"/>
+        </span>
+      </fieldset>
+      
+      <h3>Permission to Play</h3>
+      <div class="contract_register">
+        <p>
+          I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the rules of the Mighty Ducks Hockey League (MDHL). In recognizing the possibility of physical injury associated with soccer and in consideration for the "League" accepting the registrant for its soccer programs and activities, I hereby release, discharge, and/or otherwise indemnify MDHL, their employees and associated personnel and volunteers, including the facilities used for practices and games, against any claim by or on behalf of the registrant as a result of the registrant's participation in the program and/or being transported to or from MDHL sponsored activities, which transportation.       
+        </p>
+        <p>
+          By entering my name below, I hereby agree and authorize the above. In addition, by entering my name below, I also acknowledge that I have read the cancellation policy and agree to its terms.
+        </p>
+        <fieldset>
+          <div class="d-flex flex-column">
+            <label for="signature">Parent/Guardian Signature:</label>
+            <input type="text" name="signature" id="signature"/>
+          </div>
+          <div class="d-flex flex-column">
+            <label for="sig_date">Date:</label>
+            <input type="text" name="sig_date" id="sig_date"/>
+          </div>
+        </fieldset>
+      </div>
+      <div class="text-center">
+        <button class="button_register">Submit</button>
+      </div>
+    </form>
+  </div>
   </section>
 
   <div class="nav_index d-flex justify-content-evenly align-items-center">
