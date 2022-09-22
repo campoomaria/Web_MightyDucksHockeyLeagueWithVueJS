@@ -94,6 +94,7 @@ a:link {
   border: 2px solid black;
   border-radius: 15px;
   background-color: white;
+ 
 }
 
 @media (min-width: 576px) {
@@ -116,6 +117,10 @@ a:link {
 .card_1 .card-img-top {
   height: auto;
   border-radius: 15px 15px 0 0;
+}
+
+.card_1 p{
+  color: black;
 }
 
 .bodycontent_contact {
@@ -320,4 +325,33 @@ fieldset {
   background: -moz-linear-gradient(top, #38618C 0%, #6BBF59 100%, #144E75 100%);
   background: -webkit-linear-gradient(top, #38618C 0%, #6BBF59 100%, #144E75 100%);
   background: linear-gradient(to bottom, #38618C 0%, #6BBF59 100%, #144E75 100%);
+}
+
+.button_comment{
+  background: none;
+  border: 0;
+  color: black;
+}
+
+.comment_section{
+  margin-top: 150px;
+}
+
+
+.comment_section h1, p, label{
+  font-weight: 700;
+  color: white;
+  
+}
+
+.comment_section textarea {
+  resize: none;
+  width: 200px; 
+  max-height: 300px; 
+}
+
+.comment_section input{
+  width: 200px; 
+  text-align: center;
+
 }
