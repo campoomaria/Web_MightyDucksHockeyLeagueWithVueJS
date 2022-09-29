@@ -246,31 +246,31 @@ const app = Vue.createApp({
       this.passwordInicio = "";
     },
 
-    mariaF(x){
-      console.log(x)
-    },
-
-
-
-    // vercomentarios(event) {
-    //   console.log(event)
-    //   // this.page = `gamecomment`;
-    //   // this.match = event;
-
-    //   // // actualizar
-    //   // this.comments = [];
-
-    //   // const comentariosDB = firebase.database().ref("/Comentarios");
-
-    //   // comentariosDB.on("child_added", (data) => {
-    //   //   traerComentarios(data)
-        
-    //   // });
-
-    //   // this.commentgame = this.comment.filter((e) => e.matchId == this.match.id);
-
-    //   // this.commentInput = "";
+    // mariaF(x){
+    //   console.log(x)
     // },
+
+
+
+    vercomentarios(event) {
+      console.log(event)
+      this.page = `gamecomment`;
+      this.match = event;
+
+      // actualizar
+      this.comments = [];
+
+      const comentariosDB = firebase.database().ref("/Comentarios");
+
+      comentariosDB.on("child_added", (data) => {
+        traerComentarios(data)
+        
+      });
+
+      this.commentgame = this.comments.filter((e) => e.matchId == this.match.id);
+
+      this.commentInput = "";
+    },
 
     crearComentario() {
       let comentarioObj = {
@@ -336,7 +336,7 @@ const traerComentarios = (data) => {
       matchId: data.val().matchId,
       usuarioId: data.val().usuarioId,
     }
-    app.comment.push(comentarioObj)
+    app.comments.push(comentarioObj)
   }
 
 
