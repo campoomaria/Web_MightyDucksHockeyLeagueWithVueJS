@@ -1,29 +1,29 @@
-const { createApp } = Vue;
-createApp({
+const app = Vue.createApp({
   components: {
     template: "#modal-template",
   },
   data() {
     return {
-      login: true,
       mostrarmapa: false,
       mapa: `mapa1`,
       urlmap: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6572038332524!2d-87.63125808459743!3d41.900228779220456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f69da7%3A0x15e198c063fc787c!2sAJ%20Katzenmaier%20Elementary!5e0!3m2!1ses-419!2sar!4v1654568785582!5m2!1ses-419!2sar"`,
       page: `home`,
- 
-      // registro de usuario
+
       emailRegistro: "",
       passwordRegistro: "",
 
-      // inicio de sesion
       emailInicio: "",
       passwordInicio: "",
 
-       // usuario
-       alias: 'Anonimo',
-       foto: './assets/images/avatar.png',
-       inicioSesion: false,
-       usuario: null,
+      alias: "Anonimo",
+      inicioSesion: false,
+      usuario: null,
+
+      match: null,
+
+      comments: [],
+      commentgame: [],
+      commentInput: "",
 
       eventSeptember: [
         {
@@ -31,54 +31,63 @@ createApp({
           time: `9:30 am`,
           location: `AJKatzenmaier`,
           team: `U1 and U4`,
+          id: 1,
         },
         {
           date: `9/01`,
           time: `1:00 pm`,
           location: `Greenbay`,
           team: `U3 and U2`,
+          id: 2,
         },
         {
           date: `9/08`,
           time: `9:30 am`,
           location: `Howard A.Y`,
           team: `U5 and U6`,
+          id: 3,
         },
         {
           date: `9/08`,
           time: `1:00 pm`,
           location: `Marjorie P.H`,
           team: `U6 and U1`,
+          id: 4,
         },
         {
           date: `9/15`,
           time: `9:30 am`,
           location: `North Elementary`,
           team: `U2 and U4`,
+          id: 5,
         },
         {
           date: `9/15`,
           time: `1:00 pm`,
           location: `AJKatzenmaier`,
           team: `U3 and U5`,
+          id: 6,
         },
         {
           date: `9/22`,
           time: `9:30 am`,
           location: `South Elementary`,
           team: `U1 and U3`,
+          id: 7,
         },
         {
           date: `9/22`,
           time: `1:00 pm`,
           location: `Howard A.Y.`,
           team: `U2 and U6`,
+          id: 8,
         },
         {
           date: `9/29`,
           time: `9:30 am`,
           location: `Greenbay`,
           team: `U4 and U5`,
+          id: 9,
         },
       ],
       eventOctober: [
@@ -87,51 +96,67 @@ createApp({
           time: `9:30 am`,
           location: `Marjorie P.H.`,
           team: `U2 and U5`,
+          id: 10,
         },
         {
           date: `10/06`,
           time: `1:00 pm`,
           location: `South Elementary`,
           team: `U1 and U6`,
+          id: 11,
         },
         {
           date: `10/08`,
           time: `9:30 am`,
           location: `Howard A.Y.`,
           team: `U3 and U4`,
+          id: 12,
         },
         {
           date: `10/08`,
           time: `1:00 pm`,
           location: `Greenbay`,
           team: `U5 and U1`,
+          id: 13,
         },
         {
           date: `10/20`,
           time: `9:30 am`,
           location: `North Elementary`,
           team: `U6 and U3`,
+          id: 14,
         },
         {
           date: `10/20`,
           time: `1:00 pm`,
           location: `Marjorie P.H.`,
           team: `U2 and U4`,
+          id: 15,
         },
         {
           date: `10/27`,
           time: `9:30 am`,
           location: `AJKatzenmaier`,
           team: `U3 and U1`,
+          id: 16,
         },
         {
           date: `10/27`,
           time: `1:00 pm`,
           location: `Howard A.Y.`,
           team: `U5 and U6`,
+          id: 17,
         },
       ],
     };
+  },
+  mounted() {
+    const comentariosDB = firebase.database().ref("/Comentarios");
+
+    comentariosDB.on('child_added', (data) => {
+        traerComentarios(data)
+    })
+
   },
   methods: {
     showModal: function (element) {
@@ -186,38 +211,133 @@ createApp({
           .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
-          })
+          });
       }
     },
     iniciarSesion() {
-      if(this.emailInicio != '' && this.passwordInicio != ''){
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.emailInicio, this.passwordInicio)
-        .then((userCredential) => {
-          var user = userCredential.user;
-          this.usuario = user
-          this.alias = this.usuario.email
-          this.iniciarSesion = true
-          this.page='home'
-        })
-        .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-        })
+      if (this.emailInicio != "" && this.passwordInicio != "") {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(this.emailInicio, this.passwordInicio)
+          .then((userCredential) => {
+            var user = userCredential.user;
+            this.usuario = user;
+            this.alias = this.usuario.email;
+            this.inicioSesion = true;
+            this.page = "home";
+            this.emailInicio = "";
+            this.passwordInicio = "";
+          })
+          .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+          });
       }
     },
     cerrarSesion() {
       firebase.auth().signOut();
-      
-      this.usuario = null
-      this.alias = 'Anonimo'
-      this.pagina = 'Inicio'
-      this.inicioSesion = false
 
-      this.emailInicio = ''
-      this.passwordInicio = ''
-      document.getElementById('avatar').src = this.foto
+      this.usuario = null;
+      this.alias = "Anonimo";
+      this.page = "home";
+      this.inicioSesion = false;
+
+      this.emailInicio = "";
+      this.passwordInicio = "";
+    },
+
+    mariaF(x){
+      console.log(x)
+    },
+
+
+
+    // vercomentarios(event) {
+    //   console.log(event)
+    //   // this.page = `gamecomment`;
+    //   // this.match = event;
+
+    //   // // actualizar
+    //   // this.comments = [];
+
+    //   // const comentariosDB = firebase.database().ref("/Comentarios");
+
+    //   // comentariosDB.on("child_added", (data) => {
+    //   //   traerComentarios(data)
+        
+    //   // });
+
+    //   // this.commentgame = this.comment.filter((e) => e.matchId == this.match.id);
+
+    //   // this.commentInput = "";
+    // },
+
+    crearComentario() {
+      let comentarioObj = {
+        usuario: this.usuario.email,
+        comentario: this.commentInput,
+        matchId: this.match.id,
+        usuarioId: this.usuario.uid,
+      };
+
+      let nuevoComentarioKey = firebase.database().ref().child("Comentarios").push().key;
+      var updates = {};
+
+      updates["/Comentarios/" + nuevoComentarioKey] = comentarioObj;
+
+      firebase.database().ref().update(updates);
+
+      this.commentInput = "";
+
+      // actualizar
+      this.comments = [];
+
+      const comentariosDB = firebase.database().ref("/Comentarios");
+
+      comentariosDB.on("child_added", (data) => {
+        traerComentarios(data)
+      });
+
+      this.commentgame = this.comments.filter((e) => e.matchId == this.match.id);
+      this.commentInput = "";
+    },
   },
+  computed: {
+    inicioSesionUsuario() {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          var uid = user.uid;
+
+          this.usuario = user;
+          this.alias = this.usuario.email;
+          this.inicioSesion = true;
+          this.page = "home";
+          this.emailInicio = "";
+          this.passwordInicio = "";
+        } else {
+          this.usuario = null;
+          this.alias = "Anonimo";
+          this.page = "home";
+          this.inicioSesion = false;
+
+          this.emailInicio = "";
+          this.passwordInicio = "";
+        }
+      });
+    },
   },
 }).mount("#app");
+
+const traerComentarios = (data) => {
+
+    let comentarioObj = {
+      usuario: data.val().usuario,
+      comentario: data.val().comentario,
+      matchId: data.val().matchId,
+      usuarioId: data.val().usuarioId,
+    }
+    app.comment.push(comentarioObj)
+  }
+
+
+
